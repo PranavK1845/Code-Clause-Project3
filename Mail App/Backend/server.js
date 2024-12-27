@@ -1,50 +1,46 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const mailjet = require('node-mailjet');
+const nodemailer = require('nodemailer');
+const path = require('path');
 
 const app = express();
 const PORT = 3000;
 
 // Middleware
 app.use(bodyParser.json());
-app.use(express.static('public'));
+
+// Serve static files from the 'Frontend' folder
+app.use(express.static(path.join(__dirname, 'Frontend')));
 
 // Endpoint for sending emails
 app.post('/send-email', async (req, res) => {
-    const { email, recipient, subject, message } = req.body;
-
-    // Replace with your Mailjet API Key and Secret Key
-    const API_KEY = 'e53d3f873c1153a4fc9abbb0c946ae55';
-    const SECRET_KEY = 'b07b33871d5d097b81558b1d1882ee94';
+    const { email, smtp, password, recipient, subject, message } = req.body;
 
     try {
-        const mj = mailjet.connect(API_KEY, SECRET_KEY);
-        const request = await mj.post('send', { version: 'v3.1' }).request({
-            Messages: [
-                {
-                    From: {
-                        Email: email,
-                        Name: 'Mail App',
-                    },
-                    To: [
-                        {
-                            Email: recipient,
-                            Name: 'Recipient',
-                        },
-                    ],
-                    Subject: subject,
-                    TextPart: message,
-                },
-            ],
+        const transporter = nodemailer.createTransport({
+            host: smtp,
+            port: 465,
+            secure: true,
+            auth: {
+                user: email,
+                pass: password,
+            },
         });
 
-        res.json({ success: true, message: 'Email sent successfully', response: request.body });
+        const mailOptions = {
+            from: email,
+            to: recipient,
+            subject: subject,
+            text: message,
+        };
+
+        await transporter.sendMail(mailOptions);
+        res.json({ success: true, message: "Email Sent Successfully!" });
     } catch (error) {
-        res.json({ success: false, message: 'Email not sent', error: error.message });
+        res.json({ success: false, message: "Email Not Sent", error: error.message });
     }
 });
 
-// Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });

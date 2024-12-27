@@ -23,7 +23,7 @@ document.getElementById('mailForm').addEventListener('submit', async (e) => {
         if (result.success) {
             resultDiv.textContent = 'Email sent successfully!';
         } else {
-            resultDiv.textContent = `Failed to send email: ${result.message}`;
+            resultDiv.textContent = `Failed to send Email: ${result.message}`;
         }
     } catch (error) {
         resultDiv.textContent = `Error: ${error.message}`;

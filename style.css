@@ -6,7 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url(/images/bgimg1.jpg);
+    background-image: url(images/bgimg1.jpg);
     background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -21,7 +21,7 @@ body {
     padding: 20px;
     border: solid 5px rgb(206, 237, 243);
     border-radius: 15px;
-    background-image: url(/images/bgimg2.jpg);
+    background-image: url(images/bgimg2.jpg);
     background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -41,7 +41,7 @@ body {
     width: 650px;
     margin: 0 auto;
     padding: 20px;
-    background-image: url(/images/bgimg2.jpg); 
+    background-image: url(images/bgimg2.jpg); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -57,7 +57,7 @@ body {
     padding: 20px;
     border: solid 5px rgb(206, 237, 243);
     border-radius: 15px;
-    background-image: url(/images/bgimg2.jpg);
+    background-image: url(images/bgimg2.jpg);
     background-size: cover;
         background-position: center;
         background-repeat: no-repeat;

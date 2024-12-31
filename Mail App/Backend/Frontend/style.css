@@ -11,9 +11,7 @@ body {
         background-position: center;
         background-repeat: no-repeat;
         margin: 0;
-        height: 100vh;
-        
-       
+        height: 100vh;       
 }
 
 .maincontainer {
@@ -31,10 +29,10 @@ body {
 }
 
 .buttoncontainer {
-    display: flex; /* Use flexbox for horizontal alignment */
-        justify-content: center; /* Center the buttons horizontally */
-        align-items: center; /* Ensure buttons align vertically */
-        gap: 100px; /* Optional: Adjust spacing between buttons */
+    display: flex;
+        justify-content: center; 
+        align-items: center; 
+        gap: 100px;
 }
 
 .sendcontainer {
@@ -43,7 +41,7 @@ body {
     width: 650px;
     margin: 0 auto;
     padding: 20px;
-    background-image: url(./images/bgimg2.jpg); /* Light blue with transparency */
+    background-image: url(./images/bgimg2.jpg); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -68,8 +66,8 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns */
-    gap: 20px; /* Space between items */
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
     margin-right: 70px;
     margin-left: 0;
 }

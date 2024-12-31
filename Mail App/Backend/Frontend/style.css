@@ -1,51 +1,174 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #555;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(./images/bgimg.jpg);
+    background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 0;
+        height: 100vh;
+        
+       
 }
 
-.container {
+.maincontainer {
+    text-align: center;
+    width: 100%;
     max-width: 600px;
-    margin: 50px auto;
-    background: #fff;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: solid 5px rgb(206, 237, 243);
+    border-radius: 15px;
+    background-image: url(./images/bgimg2.jpg);
+    background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 0;
+}
+
+.buttoncontainer {
+    display: flex; /* Use flexbox for horizontal alignment */
+        justify-content: center; /* Center the buttons horizontally */
+        align-items: center; /* Ensure buttons align vertically */
+        gap: 100px; /* Optional: Adjust spacing between buttons */
+}
+
+.sendcontainer {
+    text-align: center;
+    height: 730px;
+    width: 650px;
+    margin: 0 auto;
+    padding: 20px;
+    background-image: url(./images/bgimg2.jpg); /* Light blue with transparency */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    border: solid 5px rgb(206, 237, 243);
+    border-radius: 15px;   
+}
+
+.sentcontainer {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    border: solid 5px rgb(206, 237, 243);
+    border-radius: 15px;
+    background-image: url(./images/bgimg2.jpg);
+    background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 20px; /* Space between items */
+    margin-right: 70px;
+    margin-left: 0;
+}
+
+.grid-container > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
 }
 
 h1 {
-    text-align: center;
-    color: #333;
-}
-
-label {
-    display: block;
-    margin-top: 10px;
-    color: #555;
-}
-
-input, textarea, button {
-    width: 100%;
-    margin-top: 5px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    margin-bottom: 20px;
+    font-family: "Borel", serif;
+    color: white;
+    font-size: 50px;
+    
 }
 
 button {
-    background-color: #5cb85c;
-    color: #fff;
-    border: none;
+    font-family: "Jua", serif;
+    height: 60px;
+    width: 130px;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #5da6c8;
+    color: white;
+    border: solid 3px rgb(206, 237, 243);
+    border-radius: 10px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #4cae4c;
+.buttoncontainer > button {
+    font-family: "Jua", serif;
+    height: 75px;
+    width: 150px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #5da6c8;
+    color: white;
+    border: solid 3px rgb(206, 237, 243);
+    border-radius: 10px;
+    cursor: pointer;
 }
 
-#result {
-    margin-top: 20px;
-    text-align: center;
-    color: #333;
+
+.maincontainer button:hover {
+    background-color: white;
+    color: #5da6c8;
 }
+
+.sendcontainer button:hover {
+    background-color: white;
+    color: #5da6c8;
+}
+
+.sentcontainer button:hover {
+    background-color: white;
+    color: #5da6c8;
+}
+
+form label {
+    font-family: "jua", serif;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form textarea {
+    font-family: "jua", serif;
+    background-color: #bae7fc;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 4px solid  rgb(206, 237, 243);;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    font-family: "jua", serif;
+    padding: 10px;
+    border: 3px solid white;
+}
+
+th {
+    background-color:  #8dd8fb;
+}
+
+#message {
+    width: 620px;
+}
+
+#smtp, #email, #recipient, #port, #password, #subject {
+    width: 260px;
+}
+
+

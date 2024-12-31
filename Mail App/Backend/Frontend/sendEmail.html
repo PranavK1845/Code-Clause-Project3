@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoMail</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Borel&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+</head>
+<body id="send-email">
+    <div class="sendcontainer">
+        <h1>Send Email</h1>
+        <form id="mailForm">
+            <div class="grid-container">
+                <div>
+                    <label for="smtp">SMTP Server:</label>
+                    <input type="text" id="smtp" placeholder="smtp.example.com" required>
+                </div>
+                <div>
+                    <label for="port">Port:</label>
+                    <input type="number" id="port" value="465" placeholder="465 or 578" required>
+                </div>
+                <div>
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" placeholder="you@example.com" required>
+                </div>
+                <div>
+                    <label for="password">App Password:</label>
+                    <input type="password" id="password" placeholder="App Password" required>
+                </div>
+                <div>
+                    <label for="recipient">Recipient Email:</label>
+                    <input type="email" id="recipient" placeholder="recipient@example.com" required>
+                </div>
+                <div>
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" placeholder="Subject" required>
+                </div>
+            </div>
+            <div>
+                <label for="message">Message:</label>
+                <textarea id="message" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit">Send Email</button>
+        </form>
+        <button id="menuBtn">Back to Main Menu</button>
+        <script src="index.js"></script>
+    </div>
+</body>
+</html>

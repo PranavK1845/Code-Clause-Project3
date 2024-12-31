@@ -1,10 +1,10 @@
 if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
     document.getElementById("sendEmailBtn").addEventListener("click", () => {
-        window.location.href = "/send-email"; 
+        window.location.href = "./sendEmail.html"; 
     });
 
     document.getElementById("viewSentEmailsBtn").addEventListener("click", () => {
-        window.location.href = "/sent-emails"; 
+        window.location.href = "./sentEmails.html"; 
     });
 }
 
@@ -34,7 +34,7 @@ if (window.location.pathname === "/send-email" || window.location.pathname === "
     });
 
     document.getElementById("menuBtn").addEventListener("click", () => {
-        window.location.href = "/"; 
+        window.location.href = "./index.html"; 
     });
 }
 
@@ -64,7 +64,7 @@ if (window.location.pathname === "/sent-emails" || window.location.pathname === 
     
     document.getElementById("menuBtnBottom").addEventListener("click", () => {
         console.log("Back to menu button clicked");
-        window.location.href = "/";
+        window.location.href = "./index.html";
     });
 }
 

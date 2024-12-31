@@ -6,40 +6,37 @@ const path = require("path");
 const app = express();
 const PORT = 3000;
 
-const sentEmails = []; // To store sent email records
+const sentEmails = []; 
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, "/Frontend"))); // Serve static files like CSS, images, etc.
+app.use(express.static(path.join(__dirname, "/Frontend"))); 
 
-// Routes for serving HTML files
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "/Frontend/main.html")); // Serve the main menu
+    res.sendFile(path.join(__dirname, "/Frontend/main.html")); 
 });
 
 app.get("/send-email", (req, res) => {
-    res.sendFile(path.join(__dirname, "/Frontend/sendEmail.html")); // Serve the send email form
+    res.sendFile(path.join(__dirname, "/Frontend/sendEmail.html")); 
 });
 
 app.get("/sent-emails", (req, res) => {
-    res.sendFile(path.join(__dirname, "/Frontend/sentEmails.html")); // Serve the sent emails page
+    res.sendFile(path.join(__dirname, "/Frontend/sentEmails.html")); 
 });
 
-// Endpoint to handle email sending
 app.post("/send-email", async (req, res) => {
     const { smtp, port, email, password, recipient, subject, message } = req.body;
 
     try {
         const transporter = nodemailer.createTransport({
-            host: smtp,               // SMTP server (e.g., smtp.gmail.com)
-            port: parseInt(port),     // Port number (465 for SSL, 587 for TLS)
-            secure: port === 465,     // true for SSL, false for TLS
+            host: smtp,               
+            port: parseInt(port),     
+            secure: port === 465,     
             auth: {
-                user: email,          // Sender's email address
-                pass: password,       // Sender's app password
+                user: email,         
+                pass: password,       
             },
         });
 
-        // Verify the transporter configuration
         await transporter.verify((error, success) => {
             if (error) {
                 console.error("SMTP Verification Failed:", error.message);
@@ -50,10 +47,10 @@ app.post("/send-email", async (req, res) => {
         });
 
         const mailOptions = {
-            from: email,       // Sender's email address
-            to: recipient,     // Recipient's email address
-            subject: subject,  // Email subject
-            text: message,     // Email message content
+            from: email,       
+            to: recipient,     
+            subject: subject,  
+            text: message,     
         };
 
         await transporter.sendMail(mailOptions, (error, info) => {
@@ -63,7 +60,6 @@ app.post("/send-email", async (req, res) => {
             } else {
                 console.log("Email sent successfully:", info.response);
 
-                // Save the sent email record
                 const emailRecord = {
                     sender: email,
                     recipient: recipient,
@@ -80,12 +76,10 @@ app.post("/send-email", async (req, res) => {
     }
 });
 
-// Endpoint to fetch sent emails
 app.get("/api/sent-emails", (req, res) => {
-    res.json(sentEmails); // Return the sent emails as JSON
+    res.json(sentEmails); 
 });
 
-// Start the server
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is ready to run on http://localhost:${PORT}`);
 });

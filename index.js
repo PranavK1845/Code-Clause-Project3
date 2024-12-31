@@ -8,7 +8,8 @@ if (window.location.pathname === "/" || window.location.pathname === "/index.htm
     });
 }
 
-if (window.location.pathname === "/send-email" || window.location.pathname === "/sendEmail.html") {
+if (window.location.pathname === "/sendEmail.html") {
+
     document.getElementById("mailForm").addEventListener("submit", async (e) => {
         e.preventDefault();
 
@@ -37,7 +38,7 @@ if (window.location.pathname === "/send-email" || window.location.pathname === "
     });
 }
 
-if (window.location.pathname === "/sent-emails" || window.location.pathname === "/sentEmails.html") {
+if (window.location.pathname === "/sentEmails.html") {
     console.log("Sent Emails page loaded");
 
     fetch("/api/sent-emails")

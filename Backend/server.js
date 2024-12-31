@@ -9,18 +9,18 @@ const PORT = 3000;
 const sentEmails = []; 
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, "/Frontend"))); 
+app.use(express.static(path.join(__dirname))); 
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "/Frontend/main.html")); 
+    res.sendFile(path.join(__dirname, "index.html")); 
 });
 
 app.get("/send-email", (req, res) => {
-    res.sendFile(path.join(__dirname, "/Frontend/sendEmail.html")); 
+    res.sendFile(path.join(__dirname, "sendEmail.html")); 
 });
 
 app.get("/sent-emails", (req, res) => {
-    res.sendFile(path.join(__dirname, "/Frontend/sentEmails.html")); 
+    res.sendFile(path.join(__dirname, "sentEmails.html")); 
 });
 
 app.post("/send-email", async (req, res) => {

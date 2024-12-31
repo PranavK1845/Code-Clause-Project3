@@ -1,10 +1,10 @@
-if (window.location.pathname === "/" || window.location.pathname === "/main.html") {
+if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
     document.getElementById("sendEmailBtn").addEventListener("click", () => {
-        window.location.href = "/send-email"; // Match server route
+        window.location.href = "/send-email"; 
     });
 
     document.getElementById("viewSentEmailsBtn").addEventListener("click", () => {
-        window.location.href = "/sent-emails"; // Match server route
+        window.location.href = "/sent-emails"; 
     });
 }
 

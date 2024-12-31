@@ -63,7 +63,7 @@ if (window.location.pathname === "/sentEmails.html") {
 
     
     document.getElementById("menuBtnBottom").addEventListener("click", () => {
-        console.log("Back to menu  clicked");
+        console.log("Back to menu button clicked");
         window.location.href = "/";
     });
 }

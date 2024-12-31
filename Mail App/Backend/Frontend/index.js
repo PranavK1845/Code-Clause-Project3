@@ -1,5 +1,3 @@
-// Main Menu Page Logic
-// Main Menu Page Logic
 if (window.location.pathname === "/" || window.location.pathname === "/main.html") {
     document.getElementById("sendEmailBtn").addEventListener("click", () => {
         window.location.href = "/send-email"; // Match server route
@@ -10,8 +8,6 @@ if (window.location.pathname === "/" || window.location.pathname === "/main.html
     });
 }
 
-// Send Email Page Logic
-// Send Email Page Logic
 if (window.location.pathname === "/send-email" || window.location.pathname === "/sendEmail.html") {
     document.getElementById("mailForm").addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -37,22 +33,18 @@ if (window.location.pathname === "/send-email" || window.location.pathname === "
     });
 
     document.getElementById("menuBtn").addEventListener("click", () => {
-        window.location.href = "/"; // Back to main.html
+        window.location.href = "/"; 
     });
 }
 
-
-// Sent Emails Page Logic
-// Sent Emails Page Logic
 if (window.location.pathname === "/sent-emails" || window.location.pathname === "/sentEmails.html") {
     console.log("Sent Emails page loaded");
 
-    // Fetch sent emails from the server
     fetch("/api/sent-emails")
         .then((res) => res.json())
         .then((data) => {
             console.log("Fetched sent emails:", data);
-            const sentEmailsTable = document.querySelector("#sentEmailsTable tbody"); // Target tbody
+            const sentEmailsTable = document.querySelector("#sentEmailsTable tbody"); 
             sentEmailsTable.innerHTML = "";
 
             data.forEach((email, index) => {
@@ -68,7 +60,7 @@ if (window.location.pathname === "/sent-emails" || window.location.pathname === 
         })
         .catch((error) => console.error("Error fetching sent emails:", error));
 
-    // Back to Main Menu button
+    
     document.getElementById("menuBtnBottom").addEventListener("click", () => {
         console.log("Back to menu button clicked");
         window.location.href = "/";
